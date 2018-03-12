@@ -2,8 +2,6 @@
 //  PreviewView.swift
 //  VisionDetection
 //
-//  Created by Wei Chieh Tseng on 09/06/2017.
-//  Copyright © 2017 Willjay. All rights reserved.
 //
 
 import UIKit
@@ -40,7 +38,7 @@ class PreviewView: UIView {
         mask.frame = rect
         mask.cornerRadius = 10
         mask.opacity = 0.75
-        mask.borderColor = UIColor.yellow.cgColor
+        mask.borderColor = UIColor.black.cgColor
         mask.borderWidth = 2.0
         
         maskLayer.append(mask)
@@ -49,7 +47,7 @@ class PreviewView: UIView {
         return mask
     }
     
-    func drawFaceboundingBox(face : VNFaceObservation) {
+    func drawFaceBoundingBox(face : VNFaceObservation) {
         
         let transform = CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: 0, y: -frame.height)
         
@@ -129,7 +127,7 @@ class PreviewView: UIView {
         lineLayer.path = linePath.cgPath
         lineLayer.fillColor = nil
         lineLayer.opacity = 1.0
-        lineLayer.strokeColor = UIColor.green.cgColor
+        lineLayer.strokeColor = UIColor.yellow.cgColor
         lineLayer.lineWidth = 0.02
         
         return lineLayer
