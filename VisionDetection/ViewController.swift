@@ -23,23 +23,8 @@ class ViewController: UIViewController {
         faceDetectionRequest = VNDetectFaceRectanglesRequest(completionHandler: self.handleFaces) // Default
         setupVision()
 
-        
-        /*
-         Setup the capture session.
-         In general it is not safe to mutate an AVCaptureSession or any of its
-         inputs, outputs, or connections from multiple threads at the same time.
-         
-         Why not do all of this on the main queue?
-         Because AVCaptureSession.startRunning() is a blocking call which can
-         take a long time. We dispatch session setup to the sessionQueue so
-         that the main queue isn't blocked, which keeps the UI responsive.
-         */
-        
-        sessionQueue.async { [unowned self] in
-            self.configureSession()
-            self.session.startRunning()
-        }
-        
+        self.configureSession()
+        self.session.startRunning()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -162,7 +147,7 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate{
     // MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        let exifOrientation = CGImagePropertyOrientation.right
+        let exifOrientation = CGImagePropertyOrientation.leftMirrored
         var requestOptions: [VNImageOption : Any] = [:]
         
         if let cameraIntrinsicData = CMGetAttachment(sampleBuffer, kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, nil) {
