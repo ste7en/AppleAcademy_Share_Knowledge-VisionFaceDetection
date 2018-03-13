@@ -12,7 +12,8 @@ class ViewController: UIViewController {
     
     // VNRequest: Either Retangles or Landmarks
     var faceDetectionRequest: VNRequest!
-    
+    private var requests = [VNRequest]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,11 +21,12 @@ class ViewController: UIViewController {
         previewView.session = session
         
         // Set up Vision Request
-        faceDetectionRequest = VNDetectFaceRectanglesRequest(completionHandler: self.handleFaces) // Default
+        faceDetectionRequest = VNDetectFaceRectanglesRequest(completionHandler: nil) // Default
         setupVision()
 
         self.configureSession()
         self.session.startRunning()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,7 +44,7 @@ class ViewController: UIViewController {
     
     @IBAction func UpdateDetectionType(_ sender: UISegmentedControl) {
         // use segmentedControl to switch over VNRequest
-        faceDetectionRequest = sender.selectedSegmentIndex == 0 ? VNDetectFaceRectanglesRequest(completionHandler: handleFaces) : VNDetectFaceLandmarksRequest(completionHandler: handleFaceLandmarks)
+        faceDetectionRequest = sender.selectedSegmentIndex == 0 ? VNDetectFaceRectanglesRequest(completionHandler: nil) : VNDetectFaceLandmarksRequest(completionHandler: nil)
         
         setupVision()
     }
@@ -50,7 +52,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var previewView: PreviewView!
     
-    // MARK: Session Management
+    // MARK: AVSession Management
     
     private var devicePosition: AVCaptureDevice.Position = .front
     
@@ -64,8 +66,7 @@ class ViewController: UIViewController {
     private var videoDataOutput: AVCaptureVideoDataOutput!
     private var videoDataOutputQueue = DispatchQueue(label: "VideoDataOutputQueue")
     
-    private var requests = [VNRequest]()
-    
+
     private func configureSession() {
         
         session.beginConfiguration()
@@ -118,27 +119,9 @@ extension ViewController {
         self.requests = [faceDetectionRequest]
     }
     
-    func handleFaces(request: VNRequest, error: Error?) {
-        DispatchQueue.main.async {
-            //perform all the UI updates on the main queue
-            guard let results = request.results as? [VNFaceObservation] else { return }
-            self.previewView.removeMask()
-            for face in results {
-                self.previewView.drawFaceBoundingBox(face: face)
-            }
-        }
-    }
+    // MARK: - Vision CompletionHandler
     
-    func handleFaceLandmarks(request: VNRequest, error: Error?) {
-        DispatchQueue.main.async {
-            //perform all the UI updates on the main queue
-            guard let results = request.results as? [VNFaceObservation] else { return }
-            self.previewView.removeMask()
-            for face in results {
-                self.previewView.drawFaceWithLandmarks(face: face)
-            }
-        }
-    }
+
 
 }
 
