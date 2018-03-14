@@ -13,10 +13,11 @@
 		02611D9B1EEA5317009714B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02611D9A1EEA5317009714B8 /* Assets.xcassets */; };
 		02611D9E1EEA5317009714B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02611D9C1EEA5317009714B8 /* LaunchScreen.storyboard */; };
 		02611DA61EEA5683009714B8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02611DA51EEA5683009714B8 /* PreviewView.swift */; };
+		7BD062A02059ACF70028060E /* What you need to add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD0629F2059ACF70028060E /* What you need to add.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02611D901EEA5317009714B8 /* VisionDetection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisionDetection.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02611D901EEA5317009714B8 /* Share_Knowledge-VisionDetection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Share_Knowledge-VisionDetection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02611D931EEA5317009714B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02611D951EEA5317009714B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		02611D981EEA5317009714B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -24,6 +25,7 @@
 		02611D9D1EEA5317009714B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02611D9F1EEA5317009714B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02611DA51EEA5683009714B8 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		7BD0629F2059ACF70028060E /* What you need to add.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "What you need to add.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,7 @@
 		02611D911EEA5317009714B8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				02611D901EEA5317009714B8 /* VisionDetection.app */,
+				02611D901EEA5317009714B8 /* Share_Knowledge-VisionDetection.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +60,7 @@
 			children = (
 				02611D931EEA5317009714B8 /* AppDelegate.swift */,
 				02611D951EEA5317009714B8 /* ViewController.swift */,
+				7BD0629F2059ACF70028060E /* What you need to add.swift */,
 				02611DA51EEA5683009714B8 /* PreviewView.swift */,
 				02611D971EEA5317009714B8 /* Main.storyboard */,
 				02611D9A1EEA5317009714B8 /* Assets.xcassets */,
@@ -70,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		02611D8F1EEA5317009714B8 /* VisionDetection */ = {
+		02611D8F1EEA5317009714B8 /* Share_Knowledge-VisionDetection */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 02611DA21EEA5317009714B8 /* Build configuration list for PBXNativeTarget "VisionDetection" */;
+			buildConfigurationList = 02611DA21EEA5317009714B8 /* Build configuration list for PBXNativeTarget "Share_Knowledge-VisionDetection" */;
 			buildPhases = (
 				02611D8C1EEA5317009714B8 /* Sources */,
 				02611D8D1EEA5317009714B8 /* Frameworks */,
@@ -82,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = VisionDetection;
+			name = "Share_Knowledge-VisionDetection";
 			productName = VisionDetection;
-			productReference = 02611D901EEA5317009714B8 /* VisionDetection.app */;
+			productReference = 02611D901EEA5317009714B8 /* Share_Knowledge-VisionDetection.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +105,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 02611D8B1EEA5317009714B8 /* Build configuration list for PBXProject "VisionDetection" */;
+			buildConfigurationList = 02611D8B1EEA5317009714B8 /* Build configuration list for PBXProject "Share_Knowledge-VisionDetection" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +118,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				02611D8F1EEA5317009714B8 /* VisionDetection */,
+				02611D8F1EEA5317009714B8 /* Share_Knowledge-VisionDetection */,
 			);
 		};
 /* End PBXProject section */
@@ -140,6 +143,7 @@
 			files = (
 				02611D961EEA5317009714B8 /* ViewController.swift in Sources */,
 				02611D941EEA5317009714B8 /* AppDelegate.swift in Sources */,
+				7BD062A02059ACF70028060E /* What you need to add.swift in Sources */,
 				02611DA61EEA5683009714B8 /* PreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,7 +308,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		02611D8B1EEA5317009714B8 /* Build configuration list for PBXProject "VisionDetection" */ = {
+		02611D8B1EEA5317009714B8 /* Build configuration list for PBXProject "Share_Knowledge-VisionDetection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				02611DA01EEA5317009714B8 /* Debug */,
@@ -313,7 +317,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		02611DA21EEA5317009714B8 /* Build configuration list for PBXNativeTarget "VisionDetection" */ = {
+		02611DA21EEA5317009714B8 /* Build configuration list for PBXNativeTarget "Share_Knowledge-VisionDetection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				02611DA31EEA5317009714B8 /* Debug */,
