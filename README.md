@@ -5,6 +5,10 @@ Share Knowledge activity @Apple Developer Academy, Naples. This is a project exa
 Try it out with real time face detection on your iPhone! 📱
 
 ---
+## Guiding Activity
+
+Use the Vision VNResult objects to draw on screen a face rectangle and facial landmarks. Use the swift file 'What to add.swift' to add the methods in the ViewController.swift.
+
 
 ## Details
 
