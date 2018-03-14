@@ -20,8 +20,8 @@ class ViewController: UIViewController {
         // Set up the video preview view.
         previewView.session = session
         
-        // Set up Vision Request
-        faceDetectionRequest = VNDetectFaceRectanglesRequest(completionHandler: nil) // Default
+        // MARK: - Set up Vision Request
+        faceDetectionRequest = VNDetectFaceRectanglesRequest(completionHandler: nil) // Default - pass the self.handleFaces completionHandler to draw the facial rectangle
         setupVision()
 
         self.configureSession()
@@ -44,8 +44,13 @@ class ViewController: UIViewController {
     
     @IBAction func UpdateDetectionType(_ sender: UISegmentedControl) {
         // use segmentedControl to switch over VNRequest
+
+        // MARK: - Complete this to draw Vision results
+
         faceDetectionRequest = sender.selectedSegmentIndex == 0 ? VNDetectFaceRectanglesRequest(completionHandler: nil) : VNDetectFaceLandmarksRequest(completionHandler: nil)
-        
+
+        // Pass the self.handleFaces completionHandler to draw the facial rectangle to VNDetectFaceRectanglesRequest
+        // Pass the self.handleFaceLandmarks completionHandler to draw the facial landmarks to VNDetectFaceLandmarksRequest
         setupVision()
     }
     
